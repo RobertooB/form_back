@@ -12,18 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/formInscripcion")
+@RequestMapping("api/formInscription")
 @CrossOrigin({ "*" })
 public class FormController {
     @Autowired
     FormService formService;
 
-    @PostMapping("/save")
+    @PostMapping("/")
     public FormInscription save(@RequestBody FormInscription form) {
         return formService.save(form);
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("/")
     public List<FormInscription> findAll() {
         return formService.findAll();
     }
