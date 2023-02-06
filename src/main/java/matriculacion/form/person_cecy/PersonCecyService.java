@@ -21,4 +21,8 @@ public class PersonCecyService {
     public PersonCecy findById(Long id) {
         return personCecyRepository.findById(id).orElse(new PersonCecy());
     }
+
+    public PersonCecy findByCedula(String cedula) {
+        return personCecyRepository.findByCedula(cedula);
+    }
 }

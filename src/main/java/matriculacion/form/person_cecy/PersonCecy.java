@@ -7,7 +7,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Column;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.ForeignKey;
 import lombok.Data;
 import matriculacion.form.catalogue_cecy.CatalogueCecy;
 
@@ -27,11 +31,21 @@ public class PersonCecy {
     private String email;
     private boolean aceptado;
     private long institucionId;
+
     @OneToOne()
-    @JoinColumn(name = "catalogue_cecy_id", referencedColumnName = "id")
+    @JoinColumn(name = "sexo_id", referencedColumnName = "id")
     private CatalogueCecy sexoId;
+
     @OneToOne()
-    @JoinColumn(name = "catalogue_cecy_id", referencedColumnName = "id")
+    @JoinColumn(name = "etnia_id", referencedColumnName = "id")
     private CatalogueCecy etniaId;
+
+    @OneToOne()
+    @JoinColumn(name = "tipo_persona_id", referencedColumnName = "id")
+    private CatalogueCecy tipoPersonaId;
+
+    @OneToOne()
+    @JoinColumn(name = "instruccion_id", referencedColumnName = "id")
+    private CatalogueCecy instruccionId;
     
 }

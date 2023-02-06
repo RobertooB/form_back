@@ -19,4 +19,5 @@ public class PersonDTO {
     private long institucionId;
     private long sexoId;
     private long etniaId;
+    private long tipoId;
 }

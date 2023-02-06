@@ -27,11 +27,11 @@ public class FormInscription {
     private Long otherCourses;
 
     @OneToOne()
-    @JoinColumn(name = "catalogue_cecy_id", referencedColumnName = "id")
+    @JoinColumn(name = "state_id", referencedColumnName = "id")
     private CatalogueCecy state;
 
     // foreign key catalogue
     @OneToOne()
-    @JoinColumn(name = "catalogue_cecy_id", referencedColumnName = "id")
+    @JoinColumn(name = "publicity_id", referencedColumnName = "id")
     private CatalogueCecy publicity;
 }

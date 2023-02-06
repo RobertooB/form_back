@@ -34,6 +34,11 @@ public class PersonCecyController {
         return personCecyService.findById(id);
     }
 
+    @GetMapping("/cedula/{cedula}")
+    public PersonCecy findByCedula(@PathVariable String cedula) {
+        return personCecyService.findByCedula(cedula);
+    }
+
     @PutMapping("/{id}/")
     public PersonCecy update(@RequestBody PersonCecy entity) {
         return personCecyService.save(entity);
