@@ -1,4 +1,4 @@
-package matriculacion.form.api_person.person;
+package matriculacion.form.api_person;
 
 import java.sql.Date;
 

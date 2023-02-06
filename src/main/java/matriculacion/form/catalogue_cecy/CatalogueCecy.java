@@ -1,4 +1,4 @@
-package matriculacion.form.api_person.catalogue;
+package matriculacion.form.catalogue_cecy;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Catalogue {
+public class CatalogueCecy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
-import matriculacion.form.api_person.catalogue.Catalogue;
+import matriculacion.form.catalogue_cecy.CatalogueCecy;
 
 @Data
 @Entity
@@ -26,10 +26,12 @@ public class FormInscription {
 
     private Long otherCourses;
 
-    private String state;
+    @OneToOne()
+    @JoinColumn(name = "catalogue_cecy_id", referencedColumnName = "id")
+    private CatalogueCecy state;
 
     // foreign key catalogue
     @OneToOne()
-    @JoinColumn(name = "catalogue_id", referencedColumnName = "id")
-    private Catalogue publicity;
+    @JoinColumn(name = "catalogue_cecy_id", referencedColumnName = "id")
+    private CatalogueCecy publicity;
 }

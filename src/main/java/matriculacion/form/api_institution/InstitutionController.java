@@ -1,4 +1,4 @@
-package matriculacion.form.api_person.person;
+package matriculacion.form.api_institution;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/person")
-public class PersonController {
+@RequestMapping("api/institucion")
+public class InstitutionController {
 
     @Autowired
-    PersonClient personClient;
+    InstitutionClient institutionClient;
 
     @GetMapping("/{id}/")
-    public PersonDTO findById(@PathVariable Long id) {
-        return personClient.findPersonByIdDto(id);
+    public InstitutionDTO findById(@PathVariable Long id) {
+        return institutionClient.findInstitutionByIdDto(id);
     }
 
 }
