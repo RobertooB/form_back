@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
-import matriculacion.form.catalogue.Catalogue;
+import matriculacion.form.api_person.catalogue.Catalogue;
 
 @Data
 @Entity

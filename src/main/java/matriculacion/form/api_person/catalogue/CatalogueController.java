@@ -1,4 +1,4 @@
-package matriculacion.form.catalogue;
+package matriculacion.form.api_person.catalogue;
 
 import java.util.List;
 

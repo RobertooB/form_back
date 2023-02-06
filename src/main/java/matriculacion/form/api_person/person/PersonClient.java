@@ -1,4 +1,4 @@
-package matriculacion.form.person;
+package matriculacion.form.api_person.person;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

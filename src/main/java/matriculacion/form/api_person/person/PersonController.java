@@ -1,4 +1,4 @@
-package matriculacion.form.person;
+package matriculacion.form.api_person.person;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

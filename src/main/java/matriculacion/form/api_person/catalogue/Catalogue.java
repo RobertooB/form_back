@@ -1,4 +1,4 @@
-package matriculacion.form.catalogue;
+package matriculacion.form.api_person.catalogue;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
