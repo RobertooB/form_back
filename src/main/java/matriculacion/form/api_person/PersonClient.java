@@ -7,5 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "bff.customer", url = "http://localhost:8000/api/persona")
 public interface PersonClient {
     @GetMapping("/{id}/")
-    PersonDTO findPersonByIdDto(@PathVariable("id") Long id);
+    PersonDTO findPersonByDTOId(@PathVariable("id") Long id);
+
+    @GetMapping("/cedula/{cedula}/")
+    PersonDTO findPersonByDTOCedula(@PathVariable("id") String cedula);
 }

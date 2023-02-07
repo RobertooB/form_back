@@ -15,7 +15,12 @@ public class PersonController {
 
     @GetMapping("/{id}/")
     public PersonDTO findById(@PathVariable Long id) {
-        return personClient.findPersonByIdDto(id);
+        return personClient.findPersonByDTOId(id);
+    }
+
+    @GetMapping("/cedula/{cedula}/")
+    public PersonDTO findByCedula(@PathVariable String cedula) {
+        return personClient.findPersonByDTOCedula(cedula);
     }
 
 }

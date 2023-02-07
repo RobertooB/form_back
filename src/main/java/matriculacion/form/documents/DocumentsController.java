@@ -1,4 +1,4 @@
-package matriculacion.form.catalogue_cecy;
+package matriculacion.form.documents;
 
 import java.util.List;
 
@@ -12,26 +12,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/catalogueCecy")
+@RequestMapping("api/documents")
 @CrossOrigin({ "*" })
-public class CatalogueCecyController {
+public class DocumentsController {
 
     @Autowired
-    CatalogueCecyService catalogueCecyService;
+    DocumentsService documentsService;
 
     @GetMapping("/")
-    public List<CatalogueCecy> findAll() {
-        return catalogueCecyService.findAll();
+    public List<Documents> findAll() {
+        return documentsService.findAll();
     }
 
     @GetMapping("/{id}/")
-    public CatalogueCecy findById(@PathVariable Long id) {
-        return catalogueCecyService.findById(id);
+    public Documents findById(@PathVariable Long id) {
+        return documentsService.findById(id);
     }
 
     @PostMapping("/")
-    public CatalogueCecy save(@RequestBody CatalogueCecy catalogueCecy) {
-        return catalogueCecyService.save(catalogueCecy);
+    public Documents save(@RequestBody Documents documents) {
+        return documentsService.save(documents);
     }
 }
-

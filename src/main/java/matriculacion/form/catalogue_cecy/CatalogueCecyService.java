@@ -21,6 +21,5 @@ public class CatalogueCecyService {
     public CatalogueCecy findById(Long id) {
         return catalogueCecyRepository.findById(id).orElse(new CatalogueCecy());
     }
-
 }
 
