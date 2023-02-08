@@ -1,12 +1,16 @@
 package matriculacion.form.person_cecy;
 
 import java.util.Date;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -14,6 +18,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.ForeignKey;
 import lombok.Data;
 import matriculacion.form.catalogue_cecy.CatalogueCecy;
+import matriculacion.form.form_inscription.FormInscription;
 
 @Data
 @Entity
@@ -47,5 +52,9 @@ public class PersonCecy {
     @OneToOne()
     @JoinColumn(name = "instruccion_id", referencedColumnName = "id")
     private CatalogueCecy instruccionId;
-    
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "personCecy")
+    // @JoinColumn(name = "person_cecy_id")
+    @JsonIgnore
+    private List<FormInscription> formInscriptions;
 }
