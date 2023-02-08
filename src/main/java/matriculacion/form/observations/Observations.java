@@ -2,11 +2,14 @@ package matriculacion.form.observations;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
 import matriculacion.form.form_inscription.FormInscription;
@@ -21,7 +24,8 @@ public class Observations {
     private Date fechaCreacion;
     private Date fechaModificacion;
     private Boolean completado;
-    @OneToOne()
-    @JoinColumn(name = "form_inscription_id", referencedColumnName = "id")
-    private FormInscription formInscriptionId;
+    // @JsonBackReference
+    // @ManyToOne
+    // @JoinColumn(name = "form_inscription_id", referencedColumnName = "id")
+    // private FormInscription form_inscription;
 }

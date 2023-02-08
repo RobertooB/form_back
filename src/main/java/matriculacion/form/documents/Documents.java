@@ -2,12 +2,14 @@ package matriculacion.form.documents;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import matriculacion.form.form_inscription.FormInscription;
 
@@ -19,8 +21,9 @@ public class Documents {
     private long id;
     private Date fechaSubida;
     private String archivoUrl;
-    @OneToOne()
-    @JoinColumn(name = "form_inscription_id", referencedColumnName = "id")
-    private FormInscription formInscriptionId;
-    
+
+    // @JsonBackReference
+    // @ManyToOne
+    // @JoinColumn(name = "form_inscription_id", referencedColumnName = "id")
+    // private FormInscription form_inscription;
 }
